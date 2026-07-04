@@ -6,94 +6,100 @@
   <title>PTHREE — Kontak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=Literata:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    :root {--bg:#fff;--surface:#f7f9fc;--text:#0b0f14;--muted:#5b6673;--accent:#1e88e5;--accent-2:#111827;--border:1px solid rgba(17,24,39,.08);--shadow:0 10px 24px rgba(2,6,23,.08);--radius:14px;--container:1000px;--ease:cubic-bezier(.22,.61,.36,1)}
+    :root{
+      --paper:#F2E8D5; --card:#FBF5E7; --ink:#2A2016; --muted:#6E5F4C;
+      --forest:#2E4638; --forest-dark:#1E3226;
+      --brass:#A9813C; --brass-light:#C9A360; --burgundy:#7A2A2A;
+      --border:1px solid rgba(42,32,22,.16); --border-soft:1px solid rgba(42,32,22,.09);
+      --shadow:0 14px 30px rgba(42,32,22,.16); --shadow-sm:0 6px 14px rgba(42,32,22,.14);
+      --radius:10px; --container:1000px; --ease:cubic-bezier(.22,.61,.36,1); --topbar-h:78px;
+    }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:72px}
-    body{margin:0;font-family:"Montserrat",system-ui,sans-serif;background:var(--bg);color:var(--text)}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    html{scroll-behavior:smooth;scroll-padding-top:var(--topbar-h)}
+    body{
+      margin:0;font-family:"Literata",Georgia,"Times New Roman",serif;color:var(--ink);
+      background-color:var(--paper);
+      background-image:
+        radial-gradient(rgba(42,32,22,.05) 1px, transparent 1px),
+        radial-gradient(rgba(42,32,22,.03) 1px, transparent 1px);
+      background-size:3px 3px, 9px 9px; background-position:0 0, 3px 5px;
+    }
+    a{color:var(--forest-dark);text-decoration:none} a:hover{text-decoration:underline}
+    img,iframe{max-width:100%}
     .container{max-width:var(--container);margin:auto;padding:0 1rem}
+    h1,h2,h3{font-family:"Fraunces",Georgia,serif;color:var(--forest-dark);margin:0}
 
-    /* Navbar V2 */
-    .topbar{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid rgba(2,6,23,.06)}
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
-    .brand{font-weight:800;color:var(--accent-2)}
-    .brand-wrap{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none}
-    .brand-logo{width:28px;height:28px;object-fit:cover;border-radius:6px}
-    .hamb{width:40px;height:40px;border-radius:10px;border:1px solid rgba(2,6,23,.12);display:grid;place-content:center;background:#fff;cursor:pointer}
-    .hamb i{font-size:18px;color:var(--accent-2)}
-    .nav-inline{display:none;align-items:center;gap:.25rem}
-    .nav-inline .nav-link{display:inline-block;padding:10px 12px;border-radius:10px;font-weight:600;color:var(--accent-2);opacity:.9;text-decoration:none}
-    .nav-inline .nav-link:hover{background:rgba(2,6,23,.05);opacity:1;text-decoration:none}
-    .nav-inline .nav-link.active{background:rgba(2,6,23,.06);box-shadow:inset 0 0 0 1px rgba(2,6,23,.08);opacity:1}
+    .topbar{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px double var(--brass)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;min-height:var(--topbar-h)}
+    .brand-wrap{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none}
+    .brand-logo{width:34px;height:34px;object-fit:cover;border-radius:50%;border:2px solid var(--brass);box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--brass-light)}
+    .brand-block{display:flex;flex-direction:column;line-height:1.05}
+    .brand{font-family:"Fraunces",serif;font-weight:700;font-size:1.2rem;color:var(--forest-dark);letter-spacing:.2px}
+    .brand-tag{display:none;font-family:"Work Sans",sans-serif;font-size:.66rem;color:var(--muted);letter-spacing:.05em}
+    @media (min-width:640px){.brand-tag{display:block}}
+
+    .hamb{width:42px;height:42px;border-radius:8px;border:1px solid var(--brass);display:grid;place-content:center;background:var(--card);cursor:pointer}
+    .hamb i{font-size:18px;color:var(--forest-dark)}
+
+    .nav-inline{display:none;align-items:center;gap:.15rem}
+    .nav-inline .nav-link{display:inline-block;padding:10px 14px;border-radius:6px;font-family:"Work Sans",sans-serif;font-weight:600;font-size:.93rem;color:var(--ink);position:relative;text-decoration:none}
+    .nav-inline .nav-link:hover{background:rgba(46,70,56,.08);text-decoration:none;color:var(--forest-dark)}
+    .nav-inline .nav-link.active{color:var(--forest-dark)}
+    .nav-inline .nav-link.active::after{content:"";position:absolute;left:14px;right:14px;bottom:6px;height:3px;background:var(--brass);border-radius:2px}
     @media (min-width:900px){.nav-inline{display:flex}.hamb{display:none}}
 
-    .mobile-menu{position:fixed;inset:0;background:var(--accent-2);color:#fff;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform .35s var(--ease),opacity .35s ease;display:flex;flex-direction:column;z-index:999}
+    .mobile-menu{position:fixed;inset:0;background:var(--forest-dark);color:var(--paper);transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform .35s var(--ease),opacity .35s ease;display:flex;flex-direction:column;z-index:999}
     .mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:auto}
-    .mobile-menu__bar{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid rgba(255,255,255,.12)}
-    .mobile-menu__close{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);display:grid;place-content:center;cursor:pointer;color:#fff}
-    .mobile-menu__links{display:flex;flex-direction:column;gap:8px;padding:24px 16px;max-width:var(--container);margin:32px auto 0}
-    .mobile-menu__links a{display:block;padding:16px 12px;border-radius:12px;color:#fff;font-weight:700;font-size:1.2rem;border:1px solid rgba(255,255,255,.12)}
-    .mobile-menu__links a.active{background:#0f172a;border-color:rgba(255,255,255,.22)}
+    .mobile-menu__bar{display:flex;align-items:center;justify-content:space-between;padding:18px 16px;border-bottom:1px solid rgba(242,232,213,.18);font-family:"Fraunces",serif;font-weight:700}
+    .mobile-menu__close{width:38px;height:38px;border-radius:8px;background:rgba(242,232,213,.08);border:1px solid rgba(242,232,213,.25);display:grid;place-content:center;cursor:pointer;color:var(--paper)}
+    .mobile-menu__links{display:flex;flex-direction:column;gap:8px;padding:24px 16px;max-width:var(--container);margin:32px auto 0;width:100%}
+    .mobile-menu__links a{display:block;padding:16px 12px;border-radius:8px;color:var(--paper);font-family:"Work Sans",sans-serif;font-weight:700;font-size:1.15rem;border:1px dashed rgba(242,232,213,.28);text-decoration:none}
+    .mobile-menu__links a.active{border-left:3px solid var(--brass);background:rgba(242,232,213,.08)}
     .no-scroll{overflow:hidden}
+    @media (min-width:900px){.mobile-menu{display:none!important}}
 
     main{padding:1rem 0}
-    h1{margin:1.2rem 0 .2rem}
+    h1{margin:1.2rem 0 .2rem;font-size:clamp(1.8rem,2vw + 1rem,2.6rem)}
     .muted{color:var(--muted)}
-    .sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(2,6,23,.15),transparent);margin:.6rem 0 1.2rem}
+    .sep{position:relative;height:2px;margin:.9rem 0 1.8rem;background:linear-gradient(90deg,transparent,var(--brass) 15%,var(--brass) 85%,transparent)}
+    .sep::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;background:var(--paper);border:2px solid var(--brass);transform:translate(-50%,-50%) rotate(45deg)}
 
     .grid{display:grid;gap:1rem;grid-template-columns:1fr}
     @media (min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-    .card{background:#fff;border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem}
-    .map{width:100%;border:0;border-radius:12px}
-    .gform-wrap{border:1px solid rgba(17,24,39,.08);border-radius:14px;overflow:hidden;box-shadow:0 10px 24px rgba(2,6,23,.08);background:#fff}
-    @media(max-width:640px){.gform-wrap iframe{height:1100px}}
-    footer{text-align:center;padding:2rem 0 3rem;color:var(--muted)}
+    .card{background:var(--card);border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.3rem}
+    .card h2{margin-bottom:.7rem;font-size:1.25rem}
+    .card p{margin:.35rem 0;line-height:1.6}
+    .card i.fa{color:var(--forest);width:18px;text-align:center}
+    .map{width:100%;border:6px solid var(--paper);border-radius:6px;box-shadow:0 10px 22px rgba(42,32,22,.26);margin-top:1rem}
 
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)} .reveal.visible{opacity:1;transform:none}
-    body.page-enter{animation:pageIn .35s var(--ease) both} body.page-exit{animation:pageOut .22s var(--ease) both}
+    .gform-wrap{border:1px solid rgba(42,32,22,.16);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
+    @media(max-width:640px){.gform-wrap iframe{height:1100px}}
+
+    footer{text-align:center;padding:2rem 0 3rem;color:var(--muted);border-top:3px double var(--brass);margin-top:1.5rem;font-family:"Work Sans",sans-serif;font-size:.9rem}
+
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
+    body.page-enter{animation:pageIn .35s var(--ease) both}
+    body.page-exit{animation:pageOut .22s var(--ease) both}
     @keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
     @keyframes pageOut{to{opacity:0;transform:translateY(6px)}}
 
-    /* === Tambahan fix navbar hilang saat scroll (tanpa hapus kode awal) === */
-    :root{ --topbar-h:72px; }
-    html{ scroll-padding-top: var(--topbar-h) !important; }
     @media (max-width:899.98px){
-      .topbar{ position:fixed !important; top:0; left:0; right:0; z-index:1000; }
-      body{ padding-top: var(--topbar-h); }
+      .topbar{position:fixed!important;top:0;left:0;right:0;z-index:1000}
+      body{padding-top:var(--topbar-h)}
     }
-    .no-scroll{ position:fixed; inset:0; overflow:hidden; }
-    header .mobile-menu{ visibility:hidden; }
-    header .mobile-menu.open{ visibility:visible; z-index:2000 !important; }
 
-  #backToTop{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  border:none;
-  background:var(--accent);
-  color:#fff;
-  font-size:18px;
-  cursor:pointer;
-  box-shadow:0 4px 12px rgba(0,0,0,.2);
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .3s,visibility .3s,transform .3s;
-  z-index:1000;
-}
-#backToTop:hover{
-  background:#1565c0;
-  transform:translateY(-3px);
-}
-#backToTop.show{
-  opacity:1;
-  visibility:visible;
-}
+    #backToTop{
+      position:fixed;bottom:24px;right:24px;width:46px;height:52px;border:none;cursor:pointer;
+      background:var(--forest);color:var(--paper);font-size:17px;box-shadow:var(--shadow-sm);
+      opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .3s;z-index:1000;
+      clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%);border-radius:6px 6px 0 0
+    }
+    #backToTop:hover{background:var(--forest-dark);transform:translateY(-3px)}
+    #backToTop.show{opacity:1;visibility:visible}
   </style>
 </head>
 <body>
@@ -101,7 +107,7 @@
     <div class="container topbar-inner">
       <a href="index.html" class="brand-wrap" aria-label="Beranda PTHREE">
         <img src="https://i.imgur.com/u2k2fsE.jpg" alt="Logo PTHREE" class="brand-logo">
-        <span class="brand">PTHREE</span>
+        <span class="brand-block"><span class="brand">PTHREE</span><span class="brand-tag">Perkumpulan Pembaca</span></span>
       </a>
 
       <nav class="nav-inline" aria-label="Navigasi utama">
@@ -133,7 +139,7 @@
   <main class="container">
     <h1 class="reveal">Kontak Kami</h1>
     <p class="muted reveal">Hubungi kami untuk saran, kolaborasi, atau informasi kegiatan.</p>
-    <hr class="sep">
+    <div class="sep"></div>
 
     <div class="grid">
       <section class="card reveal">
@@ -163,12 +169,12 @@
     </div>
 
     <footer class="reveal">
-      <p>© PTHREE 2025</p>
+      <p>© PTHREE 2025 — Perkumpulan Para Pembaca</p>
     </footer>
   </main>
-<button id="backToTop" aria-label="Kembali ke atas">
-  <i class="fa fa-arrow-up"></i>
-</button>
+  <button id="backToTop" aria-label="Kembali ke atas">
+    <i class="fa fa-arrow-up"></i>
+  </button>
   <script>
 function bindMenu(){
   const hamb = document.getElementById('hamb');
