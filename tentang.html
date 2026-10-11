@@ -31,16 +31,21 @@
       </button>
     </div>
 
-    <nav class="mobile-menu" id="menu" aria-label="Navigasi">
-      <div class="mobile-menu__bar">
-        <strong>PTHREE</strong>
-        <button class="mobile-menu__close" id="closeMenu" aria-label="Tutup menu"><i class="fa fa-close"></i></button>
-      </div>
-      <div class="mobile-menu__links">
-        <a href="index.html">Dashboard</a>
-        <a href="kegiatan.html">Kegiatan</a>
-        <a class="active" href="tentang.html" aria-current="page">Tentang</a>
-        <a href="kontak.html">Kontak</a>
+    <nav class="mobile-menu" id="menu" aria-label="Navigasi seluler" aria-hidden="true">
+      <div class="mobile-menu__backdrop" data-close></div>
+      <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
+        <div class="mobile-menu__bar">
+          <strong id="mobileMenuTitle">PTHREE</strong>
+          <button class="mobile-menu__close" id="closeMenu" aria-label="Tutup menu" data-close>
+            <i class="fa fa-close" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="mobile-menu__links">
+          <a href="index.html">Dashboard</a>
+          <a href="kegiatan.html">Kegiatan</a>
+          <a class="active" href="tentang.html" aria-current="page">Tentang</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
       </div>
     </nav>
   </header>
@@ -92,21 +97,8 @@
   <button id="backToTop" aria-label="Kembali ke atas">
     <i class="fa fa-arrow-up"></i>
   </button>
+  <script src="navigation.js"></script>
   <script>
-function bindMenu(){
-  const hamb = document.getElementById('hamb');
-  const menu = document.getElementById('menu');
-  const closeBtn = document.getElementById('closeMenu');
-  if (!hamb || !menu) return;
-
-  const openMenu = ()=>{ menu.classList.add('open'); document.body.classList.add('no-scroll'); hamb.setAttribute('aria-expanded','true'); };
-  const closeMenu = ()=>{ menu.classList.remove('open'); document.body.classList.remove('no-scroll'); hamb.setAttribute('aria-expanded','false'); };
-
-  hamb.onclick = openMenu;
-  if (closeBtn) closeBtn.onclick = closeMenu;
-  menu.addEventListener('click', (e)=>{ if(e.target.tagName === 'A') closeMenu(); });
-  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
-}
 
 function initReveals(){
   const els = document.querySelectorAll('.reveal, .reveal-stagger');
@@ -130,7 +122,6 @@ function initPageTransitions(){
   });
 }
 
-bindMenu();
 initReveals();
 initSliderIfExists();
 initPageTransitions();

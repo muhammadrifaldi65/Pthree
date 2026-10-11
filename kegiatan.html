@@ -88,53 +88,8 @@
   <button id="backToTop" aria-label="Kembali ke atas">
     <i class="fa fa-arrow-up"></i>
   </button>
+  <script src="navigation.js"></script>
   <script>
-function bindMenu(){
-  const hamb = document.getElementById('hamb');
-  const menu = document.getElementById('menu');
-  if (!hamb || !menu) return;
-
-  const panel = menu.querySelector('.mobile-menu__panel') || menu;
-  const backdrop = menu.querySelector('.mobile-menu__backdrop');
-  let lastFocus = null;
-  let lastScrollY = 0;
-
-  const focusableSel = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-  function openMenu(){
-    menu.classList.add('open');
-    menu.setAttribute('aria-hidden','false');
-    hamb.setAttribute('aria-expanded','true');
-    lastFocus = document.activeElement;
-    lastScrollY = window.scrollY || 0;
-    document.body.classList.add('no-scroll');
-    document.body.style.top = -lastScrollY + 'px';
-    const first = panel.querySelector(focusableSel);
-    if (first) first.focus({preventScroll:true});
-    document.addEventListener('keydown', onKeydown);
-  }
-
-  function closeMenu(){
-    menu.classList.remove('open');
-    menu.setAttribute('aria-hidden','true');
-    hamb.setAttribute('aria-expanded','false');
-    document.body.classList.remove('no-scroll');
-    document.body.style.top = '';
-    window.scrollTo(0, lastScrollY);
-    document.removeEventListener('keydown', onKeydown);
-    if (lastFocus && lastFocus.focus) lastFocus.focus({preventScroll:true});
-  }
-
-  function onKeydown(e){ if (e.key === 'Escape') closeMenu(); }
-
-  hamb.addEventListener('click', openMenu);
-  menu.addEventListener('click', (e)=>{
-    if (e.target.closest('[data-close]')) { closeMenu(); return; }
-    const link = e.target.closest('a[href]');
-    if (link) closeMenu();
-  });
-  if (backdrop) backdrop.addEventListener('click', closeMenu);
-}
 
 function initReveals(){
   const els = document.querySelectorAll('.reveal, .reveal-stagger');
@@ -266,7 +221,6 @@ function initPageTransitions(){
   });
 }
 
-bindMenu();
 initReveals();
 initSliderIfExists();
 initPageTransitions();

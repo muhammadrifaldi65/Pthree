@@ -43,6 +43,7 @@ body {
   font-family: var(--font-glyph);
   font-size: var(--text-body);
   line-height: 1.5;
+  overflow-wrap: anywhere;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -167,8 +168,8 @@ p {
 
 .hamb {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   place-content: center;
   color: var(--color-ink-black);
   background: var(--color-paper);
@@ -234,7 +235,7 @@ p {
   pointer-events: none;
   background: rgba(14, 16, 26, .48);
   opacity: 0;
-  transition: opacity .25s var(--ease), visibility .25s var(--ease);
+  transition: opacity .25s var(--ease);
 }
 
 .mobile-menu.open {
@@ -243,21 +244,6 @@ p {
   opacity: 1;
 }
 
-.mobile-menu:not(:has(.mobile-menu__panel)) {
-  display: flex;
-  flex-direction: column;
-  color: var(--color-paper);
-  background: var(--color-ink-black);
-  transform: translateY(-100%);
-  transition: opacity .25s var(--ease), transform .3s var(--ease), visibility .25s var(--ease);
-}
-
-.mobile-menu:not(:has(.mobile-menu__panel)).open {
-  visibility: visible;
-  pointer-events: auto;
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .mobile-menu__backdrop {
   position: absolute;
@@ -271,6 +257,10 @@ p {
   display: flex;
   width: min(88vw, 380px);
   height: 100%;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) 0;
   flex-direction: column;
   color: var(--color-paper);
   background: var(--color-ink-black);
@@ -288,14 +278,15 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 16px;
+  flex-shrink: 0;
   border-bottom: 1px solid rgba(255, 255, 255, .16);
   font-family: var(--font-matter);
 }
 
 .mobile-menu__close {
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   place-content: center;
   color: var(--color-paper);
   background: transparent;
@@ -510,7 +501,7 @@ main > h1 + p {
 
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 24px;
 }
 
@@ -617,7 +608,7 @@ main > h1 + p {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
 }
 
@@ -660,7 +651,7 @@ main > h1 + p {
 
 .mentor {
   display: grid;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 64px minmax(0, 1fr);
   align-items: center;
   gap: 16px;
   padding: 20px;
@@ -759,19 +750,19 @@ body.page-exit {
 }
 
 @keyframes pageIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes pageOut {
-  to { opacity: 0; transform: translateY(6px); }
+  to { opacity: 0; }
 }
 
 #backToTop {
   position: fixed;
   right: 24px;
   bottom: 24px;
-  z-index: 1000;
+  z-index: 50;
   width: 44px;
   height: 44px;
   color: var(--color-paper);
@@ -878,8 +869,21 @@ body.page-exit {
     width: min(100% - 24px, var(--container));
   }
 
+  .card {
+    padding: 16px;
+  }
+
+  .hero {
+    padding: 40px 0 32px;
+  }
+
+  main > h1,
+  .page-subheading {
+    margin-top: 40px;
+  }
+
   .hero h1 {
-    font-size: 40px;
+    font-size: clamp(2rem, 9vw, 2.5rem);
   }
 
   .stats {
