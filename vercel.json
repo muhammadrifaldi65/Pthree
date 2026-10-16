@@ -1,0 +1,1 @@
+{"rewrites": [{"source": "/img/:path*", "destination": "https://ik.imagekit.io/3fgrgeqi6z/:path*"}]}
