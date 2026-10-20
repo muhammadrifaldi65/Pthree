@@ -1,4 +1,5 @@
 (() => {
+  document.querySelectorAll('[data-copyright-year]').forEach(year => { year.textContent = new Date().getFullYear(); });
   const button = document.getElementById('hamb');
   const menu = document.getElementById('menu');
   const panel = menu.querySelector('.mobile-menu__panel');

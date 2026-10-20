@@ -20,7 +20,7 @@
       </a>
 
       <nav class="nav-inline" aria-label="Navigasi utama">
-        <a class="nav-link" href="index.html">Dashboard</a>
+        <a class="nav-link" href="index.html">Beranda</a>
         <a class="nav-link active" href="kegiatan.html" aria-current="page">Kegiatan</a>
         <a class="nav-link" href="tentang.html">Tentang</a>
         <a class="nav-link" href="kontak.html">Kontak</a>
@@ -41,7 +41,7 @@
           </button>
         </div>
         <div class="mobile-menu__links">
-          <a href="index.html">Dashboard</a>
+          <a href="index.html">Beranda</a>
           <a class="active" href="kegiatan.html" aria-current="page">Kegiatan</a>
           <a href="tentang.html">Tentang</a>
           <a href="kontak.html">Kontak</a>
@@ -50,15 +50,17 @@
     </nav>
   </header>
 
-  <main class="container">
-    <h1 class="reveal">Kegiatan &amp; Galeri</h1>
-    <p class="muted reveal">Dokumentasi visual kegiatan PTHREE.</p>
-    <div class="sep"></div>
+  <main class="container inner-page activities-page">
+    <div class="page-intro reveal">
+      <span class="eyebrow">Kehidupan komunitas</span>
+      <h1>Kegiatan &amp; Galeri</h1>
+      <p>Setiap pertemuan membuka ruang untuk membaca, berbagi pandangan, dan membuat cerita baru bersama.</p>
+    </div>
 
     <!-- Etalase / slider -->
     <div class="carousel reveal" aria-label="Galeri pilihan">
       <div class="track" id="track">
-        <div class="slide"><img src="https://ik.imagekit.io/3fgrgeqi6z/WhatsApp%20Image%202025-02-06%20at%2013.58.08_e13edae4.jpg?updatedAt=1761223838127" alt="Galeri 1" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="pthree-kegiatan.jpg" alt="Anggota PTHREE membaca bersama di SMAN 2 Muara Teweh" loading="lazy" decoding="async"></div>
         <div class="slide"><img src="https://imgur.com/eIFXKLW.jpg" alt="Galeri 2" loading="lazy" decoding="async"></div>
         <div class="slide"><img src="https://imgur.com/8ev83tB.jpg" alt="Galeri 3" loading="lazy" decoding="async"></div>
         <div class="slide"><img src="https://i.imgur.com/rjVU3La.jpeg" alt="Galeri 3" loading="lazy" decoding="async"></div>
@@ -68,7 +70,7 @@
       <div class="dots" id="dots"></div>
     </div>
 
-    <!-- Papan galeri -->
+    <h2 class="gallery-heading reveal">Cerita dari setiap pertemuan</h2>
     <div class="masonry reveal">
       <img src="https://i.imgur.com/avLGlgl.jpeg.jpg" alt="Kegiatan 1" loading="lazy" decoding="async">
       <img src="https://i.imgur.com/hQWCNhy.jpeg.jpg" alt="Kegiatan 2" loading="lazy" decoding="async">
@@ -82,7 +84,7 @@
     </div>
 
     <footer class="reveal">
-      <p>© PTHREE 2025 — Perkumpulan Para Pembaca</p>
+      <p>© <span data-copyright-year></span> PTHREE — Perkumpulan Para Pembaca</p>
     </footer>
   </main>
   <button id="backToTop" aria-label="Kembali ke atas">

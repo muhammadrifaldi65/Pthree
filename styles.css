@@ -915,3 +915,363 @@ body.page-exit {
     animation-duration: .01ms !important;
   }
 }
+
+/* Beranda profil: satu foto kegiatan menjadi fokus, bagian lain tetap tenang. */
+.home-page .hero {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  padding: 72px 0 64px;
+  text-align: left;
+}
+
+.home-page .hero-card {
+  gap: 24px;
+  margin: 0;
+  text-align: left;
+}
+
+.home-page .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.home-page .hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 5.3vw, 5.25rem);
+  letter-spacing: -.055em;
+  line-height: 1.04;
+}
+
+.home-page .hero p {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--color-graphite);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hero-link {
+  font-weight: 700;
+}
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--color-cloud);
+  border-radius: 4px 64px 4px 4px;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: clamp(380px, 42vw, 560px);
+  object-fit: cover;
+}
+
+.hero-visual-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 14px 20px;
+  color: var(--color-paper);
+  background: var(--color-grammarly-teal-dark);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--color-ash);
+  border-bottom: 1px solid var(--color-ash);
+}
+
+.profile-facts p {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+}
+
+.profile-facts strong {
+  color: var(--color-ink-black);
+  font-family: var(--font-matter);
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.profile-facts span {
+  color: var(--color-graphite);
+  font-size: 14px;
+}
+
+.profile-facts a {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.home-page .section {
+  padding: 88px 0 0;
+}
+
+.home-page .section + .section {
+  border: 0;
+}
+
+.home-page .section h2 {
+  max-width: 20ch;
+  letter-spacing: -.035em;
+}
+
+.home-page .sep {
+  margin: 24px 0 28px;
+}
+
+.home-page .masonry {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  column-count: auto;
+}
+
+.home-page .masonry img {
+  height: 280px;
+  margin: 0;
+  object-fit: cover;
+}
+
+.home-page #kegiatan > p {
+  margin: 24px 0 0;
+  font-weight: 700;
+}
+
+.home-page .book {
+  padding: 0;
+  border: 0;
+}
+
+.home-page .book img {
+  border-radius: 4px;
+}
+
+.home-page .book .btn {
+  padding: 10px 14px;
+}
+
+@media (max-width: 899.98px) {
+  .home-page .hero {
+    grid-template-columns: 1fr;
+    padding-top: 52px;
+  }
+
+  .home-page .hero h1 {
+    max-width: 14ch;
+  }
+
+  .hero-visual img {
+    height: clamp(300px, 55vw, 500px);
+  }
+
+  .profile-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .profile-facts a {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 639.98px) {
+  .home-page .hero {
+    gap: 32px;
+    padding: 40px 0 32px;
+  }
+
+  .home-page .hero h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .hero-visual {
+    border-top-right-radius: 40px;
+  }
+
+  .hero-visual img {
+    height: 300px;
+  }
+
+  .profile-facts {
+    gap: 16px;
+  }
+
+  .profile-facts p {
+    display: block;
+  }
+
+  .profile-facts strong,
+  .profile-facts span {
+    display: block;
+  }
+
+  .profile-facts strong {
+    font-size: 21px;
+  }
+
+  .home-page .section {
+    padding-top: 64px;
+  }
+
+  .home-page .masonry {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .masonry img {
+    height: 230px;
+  }
+}
+
+/* Halaman dalam memakai ritme dan hierarki yang sama dengan beranda. */
+.inner-page .page-intro {
+  max-width: 880px;
+  padding: 80px 0 48px;
+}
+
+.inner-page .page-intro h1 {
+  margin: 16px 0 20px;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  letter-spacing: -.05em;
+  line-height: 1.05;
+}
+
+.inner-page .page-intro p {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--color-graphite);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.inner-page .page-intro .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.inner-page .card,
+.inner-page .mentor {
+  border-color: var(--color-ash);
+}
+
+.inner-page .intro {
+  max-width: 880px;
+  padding: 36px 0;
+  border: 0;
+  border-top: 1px solid var(--color-ash);
+  border-bottom: 1px solid var(--color-ash);
+  border-radius: 0;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.inner-page .intro p:last-child {
+  margin-bottom: 0;
+}
+
+.inner-page .page-subheading {
+  margin-top: 88px;
+  letter-spacing: -.035em;
+}
+
+.inner-page .gallery-heading {
+  margin-top: 64px;
+  margin-bottom: 24px;
+  letter-spacing: -.035em;
+}
+
+.activities-page .carousel {
+  margin-top: 0;
+  border: 0;
+  border-radius: 4px 56px 4px 4px;
+}
+
+.activities-page .masonry img {
+  border-radius: 4px;
+}
+
+.contact-page .grid {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.contact-page .card {
+  padding: 32px;
+}
+
+.contact-page .card h2 {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 767.98px) {
+  .inner-page .page-intro {
+    padding: 48px 0 36px;
+  }
+
+  .inner-page .page-subheading {
+    margin-top: 64px;
+  }
+
+  .contact-page .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page .card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner-page .page-intro h1 {
+    font-size: 2.7rem;
+  }
+
+  .inner-page .intro {
+    padding: 24px 0;
+    font-size: 16px;
+  }
+
+  .contact-page .card {
+    padding: 16px;
+  }
+}
+
+.profile-facts .btn {
+  padding: 10px 16px;
+  color: var(--color-paper);
+  font-size: 14px;
+  text-align: center;
+}
+
+.profile-facts .btn:hover,
+.profile-facts .btn:focus-visible {
+  color: var(--color-paper);
+}
+
+@media (max-width: 899.98px) {
+  .profile-facts .btn {
+    justify-self: start;
+  }
+}

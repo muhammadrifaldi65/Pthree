@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/jpeg" href="https://i.imgur.com/u2k2fsE.jpg">
   <link rel="apple-touch-icon" href="https://i.imgur.com/u2k2fsE.jpg">
-  <title>PTHREE — Dashboard</title>
-  <meta name="description" content="Dashboard PTHREE — Komunitas Baca SMAN 2 Muara Teweh">
+  <title>PTHREE — Komunitas Baca SMAN 2 Muara Teweh</title>
+  <meta name="description" content="Profil PTHREE, komunitas baca SMAN 2 Muara Teweh. Kenali kegiatan, karya, dan buku pilihan anggota kami.">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,7 +21,7 @@
       </a>
 
       <nav class="nav-inline" aria-label="Navigasi utama">
-        <a class="nav-link active" href="index.html" aria-current="page">Dashboard</a>
+        <a class="nav-link active" href="index.html" aria-current="page">Beranda</a>
         <a class="nav-link" href="kegiatan.html">Kegiatan</a>
         <a class="nav-link" href="tentang.html">Tentang</a>
         <a class="nav-link" href="kontak.html">Kontak</a>
@@ -42,7 +42,7 @@
           </button>
         </div>
         <div class="mobile-menu__links">
-          <a class="active" href="index.html" aria-current="page">Dashboard</a>
+          <a class="active" href="index.html" aria-current="page">Beranda</a>
           <a href="kegiatan.html">Kegiatan</a>
           <a href="tentang.html">Tentang</a>
           <a href="kontak.html">Kontak</a>
@@ -51,37 +51,45 @@
     </nav>
   </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero reveal-stagger" id="home">
-      <div class="hero-card reveal-stagger">
-        <span class="eyebrow reveal">Komunitas Baca</span>
-        <h1 class="reveal"><b>PTHREE</b> — SMAN 2 Muara Teweh</h1>
-        <p class="reveal">Aktif membaca, berdiskusi, dan berkarya setiap hari Jumat untuk menumbuhkan budaya literasi.</p>
-        <div class="stats reveal-stagger">
-          <div class="stat"><b>2023</b><span>Sejak</span></div>
-          <div class="stat"><b>22+</b><span>Anggota</span></div>
-          <div class="stat"><b>10+</b><span>Karya & Kegiatan</span></div>
+  <main class="container home-page">
+    <section class="hero" id="home" aria-labelledby="home-title">
+      <div class="hero-card">
+        <span class="eyebrow">Perkumpulan Para Pembaca · SMAN 2 Muara Teweh</span>
+        <h1 id="home-title">Tempat cerita bertemu pembacanya.</h1>
+        <p>PTHREE adalah komunitas baca siswa SMAN 2 Muara Teweh. Setiap Jumat, kami membaca, berdiskusi, dan menciptakan karya bersama.</p>
+        <div class="hero-actions">
+          <a class="btn" href="tentang.html">Kenali PTHREE</a>
+          <a class="hero-link" href="kegiatan.html">Jelajahi kegiatan <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="reveal"><a class="btn" href="https://blog.pthreesmada.my.id/" target="_blank" rel="noopener"><i class="fa fa-globe"></i> Masuk Ke Blog PTHREE</a></div>
+      </div>
+      <div class="hero-visual">
+        <img src="pthree-kegiatan.jpg" alt="Dokumentasi kegiatan komunitas baca PTHREE" fetchpriority="high">
+        <div class="hero-visual-caption">Membaca bersama, bertumbuh bersama.</div>
       </div>
     </section>
 
+    <div class="profile-facts" aria-label="Sekilas PTHREE">
+      <p><strong>2023</strong><span>Berdiri</span></p>
+      <p><strong>22+</strong><span>Anggota</span></p>
+      <p><strong>Jumat</strong><span>Hari berkumpul</span></p>
+      <a class="btn" href="https://blog.pthreesmada.my.id/" target="_blank" rel="noopener noreferrer">Masuk ke Blog PTHREE <span aria-hidden="true">↗</span></a>
+    </div>
+
     <!-- KEGIATAN (ringkas) -->
     <section class="section reveal" id="kegiatan">
-      <h2>Kegiatan Terbaru</h2>
+      <h2>Ruang untuk tumbuh bersama</h2>
       <div class="sep"></div>
       <div class="masonry">
-        <img src="https://ik.imagekit.io/3fgrgeqi6z/WhatsApp%20Image%202025-02-06%20at%2013.58.08_e13edae4.jpg?updatedAt=1761223838127" alt="Kegiatan 1" loading="lazy" decoding="async">
-        <img src="https://ik.imagekit.io/3fgrgeqi6z/WhatsApp%20Image%202024-11-26%20at%2016.50.57_e0c09027.jpg?updatedAt=1761224200756" alt="Kegiatan 2" loading="lazy" decoding="async">
-        <img src="https://i.imgur.com/VwV8I4m.jpeg" alt="Kegiatan 3" loading="lazy" decoding="async">
+        <img src="pthree-kegiatan.jpg" alt="Dokumentasi pertemuan PTHREE" loading="lazy" decoding="async">
+        <img src="https://ik.imagekit.io/3fgrgeqi6z/WhatsApp%20Image%202024-11-26%20at%2016.50.57_e0c09027.jpg?updatedAt=1761224200756" alt="Anggota PTHREE dalam kegiatan komunitas" loading="lazy" decoding="async">
+        <img src="https://i.imgur.com/VwV8I4m.jpeg" alt="Kegiatan bersama anggota PTHREE" loading="lazy" decoding="async">
       </div>
-      <p><a href="kegiatan.html">Lihat semua kegiatan →</a></p>
+      <p><a href="kegiatan.html">Lihat semua kegiatan <span aria-hidden="true">↗</span></a></p>
     </section>
 
     <!-- KARYA (YouTube) -->
     <section class="section reveal" id="karya">
-      <h2>Video Karya</h2>
+      <h2>Karya dalam gerak</h2>
       <div class="sep"></div>
       <div class="video-grid reveal-stagger">
         <iframe loading="lazy" src="https://www.youtube.com/embed/L-dse6L49-k" title="Video 1 PTHREE" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -93,7 +101,7 @@
 
     <!-- REKOMENDASI BUKU -->
     <section class="section reveal" id="buku">
-      <h2>Rekomendasi Buku</h2>
+      <h2>Dari rak baca kami</h2>
       <div class="sep"></div>
       <div class="book-grid reveal-stagger">
         <article class="book">
@@ -139,7 +147,7 @@
         <a href="https://www.instagram.com/pthree.smada" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61551546172231&mibextid=ZbWKwL" target="_blank" aria-label="Facebook"><i class="fa fa-facebook-official"></i></a>
       </div>
-      <p>© PTHREE 2025 — Perkumpulan Para Pembaca</p>
+      <p>© <span data-copyright-year></span> PTHREE — Perkumpulan Para Pembaca</p>
     </footer>
   </main>
   <button id="backToTop" aria-label="Kembali ke atas">
